@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button-hover-lab</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding: 40px;
+      }
+      .lab-container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .btn {
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+      .btn-custom-grey {
+        background-color: #6c757d;
+        color: white;
+        border-color: #6c757d;
+      }
+      .btn-custom-grey:hover {
+        background-color: #5a6268;
+        color: white;
+        border-color: #545b62;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lab-container">
+      <hr />
+      <h2>วิธีที่1; ใช้CSS <code>:hover</code></h2>
+      <p>
+        เป็นวิธีที่ง่ายที่สุดและมีประสิทธิภาพที่สุด แค่เขียน CSS ไม่ค้องใช้
+        JAVASCRIPT
+      </p>
+      <button type="button" class="btn btn-crstom-grey">CSS Mouse check</button>
+    <hr class="my-5"/>
+      <h2>วิธีที่2; ใช้JS <code>:hover</code></h2>
+      <p>
+        ใช้เมื่อต้องการใทำอะไรที่มันซับซ้อนกว่าแค่เปลี่ยนสี
+      </p>
+      <button id="jsButton" type="button" class="btn btn-primary">
+        JS Mouse check
+
+      </button>
+    </div>
+    <script>
+      const jsButton = document.getElementById("jsButton");
+      jsButton.addEventListener("mouseover", function () {
+        this.classList.remove("btn-primary");
+        this.classList.add("btn-danger");
+        this.innerText = "JS Mouse check";
+      });
+    </script>
+
+    <!-- เมื่อเอาเมาส์ออก ให้กลับไปเป็นเหมือนเดิม -->
+    <script>
+      jsButton.addEventListener("mouseout", function () {
+        this.classList.remove("btn-danger");
+        this.classList.add("btn-primary");
+        this.innerText = "JS Mouse check";
+      });
+      </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

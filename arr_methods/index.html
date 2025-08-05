@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Sarabun", sans-serif;
+        background-color: #f1f5f9;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      }
+
+      .main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1300px;
+      }
+
+      .container {
+        width: 750px;
+        background-color: white;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .container table {
+        width: 100%;
+        table-layout: auto;
+      }
+
+      .leftside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+      }
+
+      .rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 40%;
+        min-width: 300px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .header {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      th {
+        background-color: #f8f9fa;
+        padding: 10px;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      tr td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 12px;
+      }
+
+      .btn {
+        background-color: #4a90e2;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .con-result {
+        width: 100%;
+        height: 850px;
+        background-color: white;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .con-after {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 50px;
+        border: #b0acac 2px dashed;
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      .icon {
+        font-size: 40px;
+        color: #4a90e2;
+      }
+
+      .text {
+        font-size: 20px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .sub-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      .header-result {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .msg-header {
+        font-size: medium;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .alart-con {
+        background-color: #fff9bd;
+        border-left: #ffbc4c 5px solid;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .alart-msg {
+        color: #c3a239;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .card {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background-color: #ffffff;
+        gap: 0;
+        border: #ffffff 1px solid;
+      }
+
+      .product-con {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+        background-color: #f6f6f6;
+        border-radius: 5px;
+      }
+
+      .product-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-name {
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      .product-calprice {
+        font-size: 10px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .product-price {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .total-con {
+        background-color: #a8f1ff;
+        color: #547792;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 15px 20px;
+        margin: 5px;
+      }
+      .total-text {
+        font-size: small;
+        font-weight: bold;
+      }
+      .total-price {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .insight-con {
+        background-color: #ddd;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 10px 20px;
+        margin: 5px;
+      }
+      .insight-header {
+        font-size: small;
+        font-weight: bold;
+      }
+      .insight-text {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .footer-con {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Store Simulator</h1>
+    <div class="main">
+      <div class="leftside">
+        <div class="container">
+          <div>
+            <p class="header">📦 คลังสินค้า (Products)</p>
+            <table>
+              <thead>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  ID
+                </th>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  Name
+                </th>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  Price
+                </th>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  Stock
+                </th>
+              </thead>
+              <tbody
+                id="products-table"
+                class="bg-white divide-y divide-slate-200"
+              ></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <div>
+            <p class="header">🛒 ตะกร้าสินค้าของคุณสมศักธิ์</p>
+            <table>
+              <thead>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  ProductID
+                </th>
+                <th
+                  class="px-4 py-2 text-left text-sm font-semibold text-slate-600"
+                >
+                  Quanlity
+                </th>
+              </thead>
+              <tbody
+                id="cart-table"
+                class="bg-white divide-y divide-slate-200"
+              ></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <button type="button" id="btn" class="btn">
+            ประมวลผลการสั่งซื้อ
+          </button>
+        </div>
+      </div>
+      <div class="rightside">
+        <div class="con-after">
+          <div class="con-result">
+            <div class="result">
+              <div class="icon">📄</div>
+              <div class="text">ผลลัพธ์การประมวลผล</div>
+              <div class="sub-text">
+                ผลลัพธ์จะแสดงที่นี่หลังจากกดปุ่ม "ประมวลผลการสั่งซื้อ"
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const products = [
+          {
+            id: 101,
+            name: "หูฟังบลูทูธ Sony",
+            category: "Electronics",
+            price: 4590,
+            stock: 15,
+          },
+          {
+            id: 102,
+            name: "คีย์บอร์ด Mechanical",
+            category: "Electronics",
+            price: 2800,
+            stock: 8,
+          },
+          {
+            id: 201,
+            name: "หนังสือ The Pragmatic Programmer",
+            category: "Books",
+            price: 850,
+            stock: 30,
+          },
+          {
+            id: 202,
+            name: "หนังสือ Clean Code",
+            category: "Books",
+            price: 799,
+            stock: 0,
+          }, // สินค้าหมด
+          {
+            id: 301,
+            name: "แก้วกาแฟ Starbucks",
+            category: "Lifestyle",
+            price: 550,
+            stock: 25,
+          },
+        ];
+
+        const user = {
+          name: "สมศักดิ์",
+          shoppingCart: [
+            { productId: 101, quantity: 1 }, //หูฟัง Sony 1 อัน
+            { productId: 201, quantity: 2 },
+            { productId: 102, quantity: 1 },
+            { productId: 202, quantity: 1 },
+            { productId: 301, quantity: 1 },
+          ],
+        };
+
+        const productsTableBody = document.getElementById("products-table");
+        const cartTableBody = document.getElementById("cart-table");
+        const loadedData = () => {
+          productsTableBody.innerHTML = products
+            .map(
+              (p) =>
+                `<tr>
+                  <td class="px-4 py-3 text-sm">${p.id}</td>
+                  <td class="px-4 py-3 text-sm">${p.name}</td>
+                  <td class="px-4 py-3 text-sm">${p.price.toLocaleString()}</td>
+                  <td class="px-4 py-3 text-sm">${p.stock}</td>
+              </tr>`
+            )
+            .join("");
+        };
+        const loadCart = () => {
+          cartTableBody.innerHTML = user.shoppingCart
+            .map((item) => {
+              return `<tr>
+                  <td class="px-4 py-3 text-sm">${item.productId}</td>
+                  <td class="px-4 py-3 text-sm">${item.quantity}</td>
+              </tr>`;
+            })
+            .join("");
+        };
+
+        function processCart(customer, productList) {
+            let result = `
+            <div class="con-after">
+            <div class="header-result">ใบคำสั่งซื้อของคุณ ${user.name}</div>`;
+            const enrichedCart = customer.shoppingCart.map((item) => {
+              const productDetails = productList.find(
+                (product) => product.id === item.productId
+              );
+              if (productDetails.stock < item.quantity) {
+                result += `
+                <div class="msg-header">system log: </div>
+                <div class="alart-con">
+                <div class="alart-msg">⚠️ สินค้า "${productDetails.name}" ไม่พร้อมจำหน่าย (อาจหมดสต็อก)</div></div>`;
+                return null;
+              }
+              return {
+                ...productDetails,
+                quantity: item.quantity,
+                subtotal: productDetails.price * item.quantity,
+              };
+            });
+
+            const availableItems = enrichedCart.filter((item) => item !== null);
+
+            let totalPrice = 0;
+            const priceSum = availableItems.reduce((total, item) => {
+              totalPrice += item.price * item.quantity;
+            }, 0);
+            const sortItems = availableItems.sort((a, b) => b.price - a.price);
+            result += `<div class="msg-header">รายการสินค้าที่พร้อมจัดส่ง:</div>
+            <div class="card">`;
+            sortItems.forEach((item) => {
+              result += `
+              <div class="product-con">
+                <div class="product-left">
+                  <div class="product-name">${item.name}</div>
+                  <div class="product-calprice">${item.price} x ${
+                item.quantity
+              }</div>
+                </div>
+                <div class="product-right">
+                  <div class="product-price">${(
+                    item.price * item.quantity
+                  ).toLocaleString()} บาท</div>
+                </div>
+              </div>
+            `;
+            });
+            const allOver = availableItems.every((item) => item.price > 1000);
+            const bookCate = availableItems.some(
+              (item) => item.category === "Books"
+            );
+            result += `</div>
+            <div class="footer-con">
+            <div class="total-con"><div class="total-text">ยอดรวมสุทธิ</div><div class="total-price">${totalPrice.toLocaleString()} บาท</div></div>
+            <div class="insight-con">
+              <div class="insight-header">Cart insights</div>
+              <div class="insight-text">สินค้าทุกชิ้นราคาเกิน 1000 บาท <span class="fw-bold" style="color:${
+                allOver ? "#2ecc40" : "#e04e4e"
+              };">${allOver ? "ใช่" : "ไม่ใช่"}</span></div>
+              <div class="insight-text">มีสินค้าหมวดหนังสือ 
+                <span class="fw-bold" style="color:${
+                  bookCate ? "#2ecc40" : "#e04e4e"
+                }; font-weight:bold;">${
+              bookCate ? "ใช่" : "ไม่ใช่"
+            }</span></div>
+            </div>
+            </div>
+            </div>`;
+
+            resultContainer.innerHTML = result;
+          }
+
+          const resultContainer = document.querySelector(".con-result");
+          const btn = document.getElementById("btn");
+
+          btn.addEventListener("click", () => {
+            if (btn.textContent === "ประมวลผลการสั่งซื้อ") {
+              processCart(user, products);
+              btn.textContent = "เริ่มใหม่";
+            } else {
+              resultContainer.innerHTML = `
+              <div class="result">
+                <div class="icon">📄</div>
+                <div class="text">ผลลัพธ์การประมวลผล</div>
+                <div class="sub-text">
+                  ผลลัพธ์จะแสดงที่นี่หลังจากกดปุ่ม "ประมวลผลการสั่งซื้อ"
+                </div>
+              </div>
+            `;
+              btn.textContent = "ประมวลผลการสั่งซื้อ";
+            }
+        });
+
+        loadedData();
+        loadCart();
+      });
+    </script>
+  </body>
+</html>

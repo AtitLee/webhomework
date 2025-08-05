@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ku-font: "Sarabun,sans-serif";
+            --ku-green:#006a4e;
+        }
+        body {
+            font-family: var(--ku-font);
+            /* margin: 40px; */
+            background-image: url("https://images.unsplash.com/photo-1752481109104-c07c68e82074?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            /* background-position: center center; */
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            margin-bottom: 10px;
+            width: 300px;
+            padding: 10px;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.752);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+        }
+        .bt{
+            background-color: #e04e4e;
+            display: flex;
+   
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .logo-text{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--ku-green);
+            line-height: 1;
+        }
+       .subtext{
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        .btn-ku-green{
+            background-color: var(--ku-green);
+            border-color: var(--ku-green);
+            color: #ffffff;
+        }
+        .btn-ku-green:hover {
+            background-color: #005841;
+            border-color: #005841;
+            color: #ffffff;
+        }
+        .form-check-input:checked{
+            background-color: var(--ku-green);
+            border-color: var(--ku-green);
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="form-container">
+   
+        <div class="form-header">
+            <div class="logo-text">KU 82</div>
+            <div class="subtext">ALL-Login</div>
+        <hr class="my-3"/>
+        <h2>ฟอร์มถอนรายวิชา</h2>
+        </div>
+         <form id="dropform" class="non-varidate">
+         <div class="mb-3">
+            <label for="subject" class="form-label">รายวิชาที่จะถอน</label>
+            <select name="subject" id="subject" class="form-select">
+                <option value=""selected>-- กรุณาเลือกรายวิชา --</option>
+                <option value="cobal">Cobal Programing</option>
+                <option value="stat">Statistic Advance</option>
+                <option value="Machine">Machine learning</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="usernamne">Username</label>
+            <input type="text" name="username" id="username" class="form-control"/>
+            <div id="username-feedback" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"  class="form-control"/>
+            <div id="email-feedback" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password"  class="form-control" />
+            <div id="password-feedback" class="invalid-feedback"></div>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" name="confirm" id="confirm" class="form-check-input">
+            <label for="confirm" class="form-check-label m-1">ข้าพเจ้ายืนยันและเข้าใจเงื่อไขการถอนรายวิชานี้</label>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-ku-green btn-lg">DROP</button>
+        </div>
+        <div id="error" class="mt-3 text-danger"></div>
+    </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+</body>
+
+</html>

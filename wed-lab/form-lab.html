@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ku-font: 'Sarabun', sans-serif;
+        --ku-green: #006a4e;
+      }
+      body {
+        background-color: #f8f9fa;
+        padding: 40px;
+      }
+      .lab-container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lab-container">
+      <h1 class="mb-2">Lab: Form</h1>
+      <p>ตัวอย่างฟอร์มเพื่ออกแบบมาให้ผู้ใช้กรอกข้อมูลได้ง่ายและชัดเจน</p>
+      <form>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            name="email"
+            id="floatingEmail"
+            class="form-control"
+            placeholder="name@ku.th"
+            required
+          />
+          <label for="floatingEmail">email✉️</label>
+        </div>
+
+        <!-- password -->
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            name="password"
+            id="floatingPassword"
+            class="form-control"
+            placeholder="Password"
+            required
+          />
+          <label for="floatingPassword">รหัสผ่านจ้าา</label>
+      </form>
+      
+      <div class="mb-3">
+        <label for="userTypeSelect" class="form-label">
+          ประเภทผู้ใช้งาน
+        </label>
+        <select class="form-select" id="userTypeSelect">
+          <option selected>-- กรุณาเลือก --</option>
+          <option value="1">ผู้ใช้ทั่วไป</option>
+          <option value="2">ผู้ใช้ทั่วทั่วไป</option>
+          <option value="3">ไม่ใช่ผู้ใช้</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-3"><label for="userBio" class="form-label">แนะนำตัวเอง</label>
+    <textarea name="userBio" id="userBio" class="form-control" rows="4"></textarea>
+    </div>
+
+    <div class="form-check mb-4"><input type="checkbox" name="termsCheck" id="termsCheck" class="form-check-input">
+      <label for="termsCheck" class="form-check-label">
+        ฉันได้อ่านและยอมรับ
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 py-2">ลงทะเบียน</button>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

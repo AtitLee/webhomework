@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown-lab</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+        body {
+        background-color: #f8f9fa;
+        padding: 40px;
+      }
+      .lab-container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <h1 class="mb-4">LAB: Dropdown Menu</h1>
+        <p>ในการสร้าง Dropdown ด้วย Bootstrap จะต้องใช้ทั้ง Javascript ของ bootstrap เพื่อให้ทำงานได้อย่างสมบูรณ์</p>
+        <hr>
+
+        <h2>ตัวอย่างเมนู</h2>
+        <p>Click ปุ่มด้านล่างเพื่อเปิดเมนู</p>
+        <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action😔</a></li>
+              <li><a class="dropdown-item" href="#">Another action⬆️</a></li>
+              <li><a class="dropdown-item" href="#">Another action➡️</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here👌</a></li>
+            </ul>
+          </div>
+          <hr class="my-4">
+        </div>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

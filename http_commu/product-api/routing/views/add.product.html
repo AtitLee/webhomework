@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addproduct</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:rgb(182, 182, 182);
+        border-radius: 20px;
+        width: 500px;
+        padding: 2rem;
+      }
+      .header {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      .input {
+        width: 100%;
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin-top: 1rem;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn{
+        background-color: black;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Add-Product</div>
+      <form action="/product" method="POST" class="form">
+        <input
+          type="text"
+          name="title"
+          placeholder="ใส่อะไรมา"
+          class="input"
+        /><br />
+        <button type="submit" class="btn">Add Product</button>
+      </form>
+    </div>
+  </body>
+</html>

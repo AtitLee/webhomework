@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Shop</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 2rem;
+        background-color: rgb(182, 182, 182);
+        border-radius: 10px;
+        box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 100px;
+        font-weight: bold;
+      }
+      .subtitle {
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      a {
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>My product</h1>
+        <div class="subtitle">List of all product</div>
+        <a href="http://localhost:3000/admin/add-product">add-product</a>
+      </div>
+    </main>
+  </body>
+</html>
