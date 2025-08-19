@@ -10,7 +10,7 @@ router.get("/add-product", (req, res) => {
   res.render('add-product',{pageTitle: 'Add Product'})
 });
 
-router.post('add-product',(req,res,next) => {
+router.post('/add-product',(req,res,next) => {
   products.push({title: req.body.title });
   res.redirect('/')
 })
