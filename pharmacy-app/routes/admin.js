@@ -25,10 +25,15 @@ let products = [
 function getProduct(){
     return products;
 }
+router.get('/',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','views','index.html'));
+})
 
 router.get('/add-product',(req,res) =>{
-    
+    res.sendFile(path.join(__dirname,'..','views','add-product.html'));
 })
+
+
 
 module.exports ={
     router: router,
