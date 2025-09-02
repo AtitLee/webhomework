@@ -10,9 +10,8 @@ block content
             .form-control
                 label(for="title") Title
                 input(type="text" name="title" id="title")
-        form.product-form(action="/admin/add-product" method="POST")
-            .form-control
                 label(for="price") Price
-                input(type="number" name="price" id="price")
-                
+                input(type="number" name="price" id="price")    
+                label(for="description") description
+                input(type="text" name="description" id="description")            
             button.btn(type="submit") Add Product

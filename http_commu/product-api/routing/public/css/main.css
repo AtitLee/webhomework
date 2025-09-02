@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 main {
@@ -15,11 +16,24 @@ main {
   margin: auto;
 }
 
+h1{
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+p{
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+}
+
 .main-header {
   width: 100%;
-  height: 3.5rem;
-  background-color: #00695c;
+  height: 4rem;
+  background-color: #EEE6CA;
   padding: 0 1.5rem;
+  border-radius: 10px;
 }
 
 .main-header__nav {
@@ -42,19 +56,19 @@ main {
 
 .main-header__item a {
   text-decoration: none;
-  color: white;
+  color: #D6A99D;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #ffeb3b;
+  color: #896C6C;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: stretch;
 }
 
@@ -94,8 +108,8 @@ main {
 
 .btn {
   font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
+  border: 1px solid #896C6C;
+  color: #896C6C;
   background: white;
   border-radius: 3px;
   cursor: pointer;
@@ -103,6 +117,6 @@ main {
 
 .btn:hover,
 .btn:active {
-  background-color: #00695c;
+  background-color: #896C6C;
   color: white;
 }

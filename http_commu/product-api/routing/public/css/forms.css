@@ -1,7 +1,9 @@
 .form-control {
     margin: 1rem 0;
 }
-
+label{
+    color: #896C6C;
+}
 .form-control label,
 .form-control input {
     display: block;
